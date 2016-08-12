@@ -1,0 +1,95 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../button-action/button-action.html">
+
+<!--
+A polymer web component that shows a stylized button link.
+
+Example:
+
+        <button-link
+          link="http://link"
+          target="_blank"
+          text="Click Me"
+          show>
+        </button-link>
+
+@demo demo/index.html
+-->
+
+<dom-module id="button-link">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .hide {
+        visibility: hidden;
+      }
+
+      .show {
+        visibility: visible;
+      }
+    </style>
+
+    <a class$="[[showOrHide(show)]]" target="[[target]]" href$="[[link]]">
+      <button-action text="[[text]]"></button-action>
+    </a>
+  </template>
+
+  <script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 'button-link',
+
+      properties: {
+        /**
+         * The link URL.
+         */
+        link: {
+          type: String,
+          value: ''
+        },
+
+        /**
+         * The target page of the link.
+         */
+        target: {
+          type: String,
+          value: '_self'
+        },
+
+        /**
+         * The text to show in the link.
+         */
+        text: {
+          type: String,
+          value: ''
+        },
+
+        /**
+         * Whether to show the link.
+         */
+        show: {
+          type: Boolean,
+          value: false
+        }
+      },
+
+      /**
+       * Returns the style class to show or hide the link based on the given boolean.
+       */
+      showOrHide: function(show) {
+        return show ? 'show' : 'hide';
+      }
+    });
+  })();
+  </script>
+</dom-module>

@@ -1,0 +1,80 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+  <link rel="import" href="../button-link.html">
+</head>
+
+<body>
+  <test-fixture id="button-link-fixture">
+    <template>
+      <button-link></button-link>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('button-link tests without properties', function() {
+      var component;
+
+      setup(function() {
+        component = fixture('button-link-fixture');
+      });
+
+      test('properties are set to default values', function() {
+        expect(component.link).to.equal('');
+        expect(component.target).to.equal('_self');
+        expect(component.text).to.equal('');
+        expect(component.show).to.be.false;
+      });
+
+      test('does show link', function() {
+        expect(component.$$('a')).to.exist;
+      });
+
+      test('does show button', function() {
+        expect(component.$$('button-action')).to.exist;
+      });
+    });
+
+    suite('button-link tests', function() {
+      var component;
+
+      setup(function(done) {
+        component = fixture('button-link-fixture');
+        component.link = 'myLink';
+        component.target = 'myTarget';
+        component.text = 'myText';
+        component.show = true;
+        flush(function() {
+          done();
+        });
+      });
+
+      test('properties are set to correct values', function() {
+        expect(component.link).to.equal('myLink');
+        expect(component.target).to.equal('myTarget');
+        expect(component.text).to.equal('myText');
+        expect(component.show).to.be.true;
+      });
+
+      test('does show link', function() {
+        expect(component.$$('a')).to.exist;
+      });
+
+      test('does show button', function() {
+        expect(component.$$('button-action')).to.exist;
+      });
+
+      test('showOrHide given true returns show', function() {
+        expect(component.showOrHide(true)).to.equal('show');
+      });
+
+      test('showOrHide given false returns hide', function() {
+        expect(component.showOrHide(false)).to.equal('hide');
+      });
+    });
+  </script>
+</body>
+</html>
