@@ -30,11 +30,15 @@
       });
 
       test('does show link', function() {
-        expect(component.$$('a')).to.exist;
+        expect(component.$$('a[href=""]')).to.exist;
+        expect(component.$$('a[href=""]').className.includes('show')).to.be.false;
+        expect(component.$$('a[href=""]').className.includes('hide')).to.be.true;
+        expect(component.$$('a[href=""]').target).to.equal(component.target);
       });
 
       test('does show button', function() {
         expect(component.$$('button-action')).to.exist;
+        expect(component.$$('button-action').text).to.equal(component.text);
       });
     });
 
@@ -60,11 +64,15 @@
       });
 
       test('does show link', function() {
-        expect(component.$$('a')).to.exist;
+        expect(component.$$('a[href="' + component.link + '"]')).to.exist;
+        expect(component.$$('a[href="' + component.link + '"]').className.includes('show')).to.be.true;
+        expect(component.$$('a[href="' + component.link + '"]').className.includes('hide')).to.be.false;
+        expect(component.$$('a[href="' + component.link + '"]').target).to.equal(component.target);
       });
 
       test('does show button', function() {
         expect(component.$$('button-action')).to.exist;
+        expect(component.$$('button-action').text).to.equal(component.text);
       });
 
       test('showOrHide given true returns show', function() {
