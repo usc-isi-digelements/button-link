@@ -2,16 +2,16 @@
 <link rel="import" href="../button-action/button-action.html">
 
 <!--
-A polymer web component that shows a stylized button link.
+A Polymer Element showing a stylized button that opens a link when clicked or tapped.
 
 Example:
 
-        <button-link
-          link="http://link"
-          target="_blank"
-          text="Click Me"
-          show>
-        </button-link>
+    <button-link
+        link="http://link"
+        target="_blank"
+        text="Click Me"
+        show>
+    </button-link>
 
 @demo demo/index.html
 -->
@@ -37,7 +37,7 @@ Example:
       }
     </style>
 
-    <a class$="[[showOrHide(show)]]" target="[[target]]" href$="[[link]]">
+    <a class$="[[_showOrHide(show)]]" target="[[target]]" href$="[[link]]">
       <button-action text="[[text]]"></button-action>
     </a>
   </template>
@@ -52,6 +52,9 @@ Example:
       properties: {
         /**
          * The link URL.
+         *
+         * @type {String}
+         * @value ''
          */
         link: {
           type: String,
@@ -60,6 +63,9 @@ Example:
 
         /**
          * The target page of the link.
+         *
+         * @type {String}
+         * @value '_self'
          */
         target: {
           type: String,
@@ -68,6 +74,9 @@ Example:
 
         /**
          * The text to show in the link.
+         *
+         * @type {String}
+         * @value ''
          */
         text: {
           type: String,
@@ -76,6 +85,9 @@ Example:
 
         /**
          * Whether to show the link.
+         *
+         * @type {Boolean}
+         * @value false
          */
         show: {
           type: Boolean,
@@ -85,8 +97,12 @@ Example:
 
       /**
        * Returns the style class to show or hide the link based on the given boolean.
+       *
+       * @param {Boolean} show
+       * @return {String}
+       * @private
        */
-      showOrHide: function(show) {
+      _showOrHide: function(show) {
         return show ? 'show' : 'hide';
       }
     });

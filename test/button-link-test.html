@@ -16,71 +16,71 @@
 
   <script>
     suite('button-link tests without properties', function() {
-      var component;
+      var element;
 
       setup(function() {
-        component = fixture('button-link-fixture');
+        element = fixture('button-link-fixture');
       });
 
       test('properties are set to default values', function() {
-        expect(component.link).to.equal('');
-        expect(component.target).to.equal('_self');
-        expect(component.text).to.equal('');
-        expect(component.show).to.be.false;
+        expect(element.link).to.equal('');
+        expect(element.target).to.equal('_self');
+        expect(element.text).to.equal('');
+        expect(element.show).to.be.false;
       });
 
       test('does show link', function() {
-        expect(component.$$('a[href=""]')).to.exist;
-        expect(component.$$('a[href=""]').className.includes('show')).to.be.false;
-        expect(component.$$('a[href=""]').className.includes('hide')).to.be.true;
-        expect(component.$$('a[href=""]').target).to.equal(component.target);
+        expect(element.$$('a[href=""]')).to.exist;
+        expect(element.$$('a[href=""]').className.includes('show')).to.be.false;
+        expect(element.$$('a[href=""]').className.includes('hide')).to.be.true;
+        expect(element.$$('a[href=""]').target).to.equal(element.target);
       });
 
       test('does show button', function() {
-        expect(component.$$('button-action')).to.exist;
-        expect(component.$$('button-action').text).to.equal(component.text);
+        expect(element.$$('button-action')).to.exist;
+        expect(element.$$('button-action').text).to.equal(element.text);
       });
     });
 
     suite('button-link tests', function() {
-      var component;
+      var element;
 
       setup(function(done) {
-        component = fixture('button-link-fixture');
-        component.link = 'myLink';
-        component.target = 'myTarget';
-        component.text = 'myText';
-        component.show = true;
+        element = fixture('button-link-fixture');
+        element.link = 'myLink';
+        element.target = 'myTarget';
+        element.text = 'myText';
+        element.show = true;
         flush(function() {
           done();
         });
       });
 
       test('properties are set to correct values', function() {
-        expect(component.link).to.equal('myLink');
-        expect(component.target).to.equal('myTarget');
-        expect(component.text).to.equal('myText');
-        expect(component.show).to.be.true;
+        expect(element.link).to.equal('myLink');
+        expect(element.target).to.equal('myTarget');
+        expect(element.text).to.equal('myText');
+        expect(element.show).to.be.true;
       });
 
       test('does show link', function() {
-        expect(component.$$('a[href="' + component.link + '"]')).to.exist;
-        expect(component.$$('a[href="' + component.link + '"]').className.includes('show')).to.be.true;
-        expect(component.$$('a[href="' + component.link + '"]').className.includes('hide')).to.be.false;
-        expect(component.$$('a[href="' + component.link + '"]').target).to.equal(component.target);
+        expect(element.$$('a[href="' + element.link + '"]')).to.exist;
+        expect(element.$$('a[href="' + element.link + '"]').className.includes('show')).to.be.true;
+        expect(element.$$('a[href="' + element.link + '"]').className.includes('hide')).to.be.false;
+        expect(element.$$('a[href="' + element.link + '"]').target).to.equal(element.target);
       });
 
       test('does show button', function() {
-        expect(component.$$('button-action')).to.exist;
-        expect(component.$$('button-action').text).to.equal(component.text);
+        expect(element.$$('button-action')).to.exist;
+        expect(element.$$('button-action').text).to.equal(element.text);
       });
 
-      test('showOrHide given true returns show', function() {
-        expect(component.showOrHide(true)).to.equal('show');
+      test('_showOrHide given true returns show', function() {
+        expect(element._showOrHide(true)).to.equal('show');
       });
 
-      test('showOrHide given false returns hide', function() {
-        expect(component.showOrHide(false)).to.equal('hide');
+      test('_showOrHide given false returns hide', function() {
+        expect(element._showOrHide(false)).to.equal('hide');
       });
     });
   </script>

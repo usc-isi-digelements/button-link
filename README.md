@@ -1,15 +1,15 @@
 # button-link
 
-A polymer web component that shows a stylized button link.
+A Polymer Element showing a stylized button that opens a link when clicked or tapped.
 
-Example:
+### Example
 ```html
-        <button-link
-          link="http://link"
-          target="_blank"
-          text="Click Me"
-          show>
-        </button-link>
+    <button-link
+        link="http://link"
+        target="_blank"
+        text="Click Me"
+        show>
+    </button-link>
 ```
 
 ### Dependencies
