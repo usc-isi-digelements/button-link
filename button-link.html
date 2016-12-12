@@ -5,13 +5,14 @@
 A Polymer Element showing a stylized button that opens a link when clicked or tapped.
 
 ### Example
-
-    <button-link
-        link="http://link"
-        target="_blank"
-        text="Click Me"
-        show>
-    </button-link>
+```html
+<button-link
+  link="http://link"
+  target="_blank"
+  text="Click Me"
+  show>
+</button-link>
+```
 
 @demo demo/index.html
 -->
@@ -51,6 +52,8 @@ A Polymer Element showing a stylized button that opens a link when clicked or ta
 
       properties: {
         /**
+         * (Required)
+         *
          * The link URL.
          *
          * @type {String}
@@ -62,6 +65,8 @@ A Polymer Element showing a stylized button that opens a link when clicked or ta
         },
 
         /**
+         * (Required)
+         *
          * The target page of the link.
          *
          * @type {String}
@@ -73,6 +78,8 @@ A Polymer Element showing a stylized button that opens a link when clicked or ta
         },
 
         /**
+         * (Required)
+         *
          * The text to show in the link.
          *
          * @type {String}
@@ -84,6 +91,8 @@ A Polymer Element showing a stylized button that opens a link when clicked or ta
         },
 
         /**
+         * (Required)
+         *
          * Whether to show the link.
          *
          * @type {Boolean}
