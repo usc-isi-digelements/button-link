@@ -1,10 +1,9 @@
 {
   "name": "button-link",
-  "version": "1.0.1",
-  "authors": [
-    "Next Century Corporation"
-  ],
   "description": "A Polymer Element showing a stylized button that opens a link when clicked or tapped.",
+  "version": "1.0.1",
+  "authors": ["Next Century Corporation"],
+  "license": "Apache-2.0",
   "keywords": [
     "web-component",
     "polymer"
