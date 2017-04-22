@@ -55,7 +55,7 @@ A Polymer Element showing a stylized button that opens a link when clicked or ta
     </style>
 
     <a class$="[[_showOrHide(show)]]" target="[[target]]" href$="[[link]]">
-      <button-action text="[[text]]"></button-action>
+      <button-action icon="[[icon]]" text="[[text]]"></button-action>
     </a>
   </template>
 
@@ -67,6 +67,19 @@ A Polymer Element showing a stylized button that opens a link when clicked or ta
       is: 'button-link',
 
       properties: {
+        /**
+         * (Optional)
+         *
+         * The icon to show in the link.
+         *
+         * @type {String}
+         * @value ''
+         */
+        icon: {
+          type: String,
+          value: ''
+        },
+
         /**
          * (Required)
          *
