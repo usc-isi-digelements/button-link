@@ -12,6 +12,14 @@ A Polymer Element showing a stylized button that opens a link when clicked or ta
 </button-link>
 ```
 
+### Styling
+
+`<button-link>` provides the following custom properties and mixins for styling:
+
+Custom property                  | Description                         | Default
+---------------------------------|-------------------------------------|--------
+`--button-link-background-color` | The background color of the button. | none
+
 ### Dependencies
 
 Dependencies are installed using [Bower](http://bower.io/):
