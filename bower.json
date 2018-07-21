@@ -1,22 +1,17 @@
 {
   "name": "button-link",
-  "description": "A Polymer Element showing a stylized button that opens a link when clicked or tapped.",
+  "description":
+    "A Polymer Element showing a stylized button that opens a link when clicked or tapped.",
   "version": "2.0.2",
   "authors": ["Next Century Corporation"],
   "license": "Apache-2.0",
-  "keywords": [
-    "web-component",
-    "polymer"
-  ],
+  "keywords": ["web-component", "polymer"],
   "main": "button-link.html",
-  "homepage": "https://github.com/DigElements/button-link/",
-  "ignore": [
-    "/.*",
-    "/test/"
-  ],
+  "homepage": "https://github.com/usc-isi-digelements/button-link/",
+  "ignore": ["/.*", "/test/"],
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.2",
-    "button-action": "DigElements/button-action#2.0.4"
+    "button-action": "usc-isi-digelements/button-action#2.0.4"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^2.0.0",
