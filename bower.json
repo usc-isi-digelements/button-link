@@ -11,7 +11,7 @@
   "ignore": ["/.*", "/test/"],
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.2",
-    "button-action": "usc-isi-digelements/button-action#2.0.4"
+    "button-action": "usc-isi-digelements/button-action#^2.0.4"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^2.0.0",
